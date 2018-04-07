@@ -12,8 +12,8 @@ import Foundation
 var rawInput = readLine()
 
 // Print out the input provided
-print("You said:")
-print(rawInput)
+//print("You said:")
+//print(rawInput)
 
 // Make sure the input isn't nil
 //(Unwrap the optional)
@@ -23,7 +23,7 @@ guard let input = rawInput else {
 }
 
 // Print the verified input
-print(input)
+//print(input)
 
 //Lope over each character of the input string
 var happyCount = 0
@@ -31,25 +31,33 @@ var sadCount = 0
 for individualCharacter in input {
     
     // DEBUG: What character are we looking at now?
-    print(individualCharacter)
+    //print(individualCharacter)
     
     // Is the character happy, sad, or neither?
-    if individualCharacter == "😀" {
+    if individualCharacter == "😃" ||
+        individualCharacter == "😄" ||
+        individualCharacter == "🙂" ||
+        individualCharacter == "😊" {
         happyCount += 1
-    }else if individualCharacter == "😩" {
+    } else if individualCharacter == "☹️" ||
+        individualCharacter == "🙁" ||
+        individualCharacter == "😕" ||
+        individualCharacter == "😔" {
         sadCount += 1
     }
     
 }
 
 
-// Output!!!!
+// Output
 if sadCount == happyCount {
     print("unsure")
 } else if sadCount <= happyCount {
     print("happy")
 } else if sadCount >= happyCount {
     print("sad")
+} else if sadCount == 0 && happyCount == 0 {
+    print("none")
 }
 
 
